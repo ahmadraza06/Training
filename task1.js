@@ -1,19 +1,46 @@
 // task 2
 // reverse a string
 
-function reversestr(str){
-  res = [];
-  for(let i = str.length-1;i>=0;i--){
-    res.push(str[i]);
-  }
-  str = res.join('');
-  return str;
-}
-console.log(reversestr("hello world"));
+// function reversestr(str){
+//   res = [];
+//   for(let i = str.length-1;i>=0;i--){
+//     res.push(str[i]);
+//   }
+//   str = res.join('');
+//   return str;
+// }
+// console.log(reversestr("hello"));
 
-// Reverse a string
+
+
 // Count vowels
-// Check palindrome
+
+// function countVowels(s){
+//     let cnt = 0;
+//     for(let i = 0;i<s.length;i++){
+//         if(s[i]=='a'|| s[i]=='A'|| s[i]=='e'|| s[i]=='E' ||s[i]=='i'|| s[i]=='I'||
+//             s[i]=='o' || s[i]=='O' || s[i]=='u'|| s[i]=='U'
+//         ){
+//             cnt++;
+//         }
+//     }
+//     return cnt;
+// }
+// console.log(countVowels("Aoust"))
+
+// --->> Check palindrome
+function isPalindrome(s){
+    let n = s.length;
+    for(let i = 0;i<s.length/2;i++){
+        if(s[i]!=s[n-i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isPalindrome("hello"));
+
+
 // Find max number in array
 // Remove duplicates from array
 
