@@ -1,10 +1,94 @@
 // task 2
 // reverse a string
 
-function reverse(str){
-    return str;
+function reversestr(str){
+  res = [];
+  for(let i = str.length-1;i>=0;i--){
+    res.push(str[i]);
+  }
+  str = res.join('');
+  return str;
 }
-// 
-console.log("hello");
-  
-console.log(reverse("ahmad"));
+console.log(reversestr("hello world"));
+
+// Reverse a string
+// Count vowels
+// Check palindrome
+// Find max number in array
+// Remove duplicates from array
+
+// Task 3: Build a tiny functional project
+// 👉 “Text Tools App”
+// (very small but teaches dev thinking)
+// Features:
+// Count characters
+// Count words
+// Remove extra spaces
+// Convert to UPPER/lower case
+// Copy text to clipboard
+
+// 🔥 2. CHALLENGE (Google Bootcamp Style)
+// “Do NOT copy from YouTube.
+// First try to solve with your brain.
+// THEN check solution.”
+// ⏳ Set 40 minutes timer
+// Try to create a JavaScript function that:
+// removes duplicate words from a sentence
+// Example
+// Input: "I love coding coding in javascript javascript"
+// Output: "I love coding in javascript"
+// This trains:
+// problem-solving
+// string manipulation
+// algorithmic thinking
+
+// 🎯 3. GOAL (End of Day 1 Target)
+// By end of today, you should be able to:
+// ✓ Write small JavaScript functions
+// ✓ Debug using console.log
+// ✓ Use Git & push to GitHub
+// ✓ Build a very small functional project
+// ✓ Think in problem → logic → solution format
+// ✓ Work like a real developer, not a tutorial watcher
+
+// 🧠 4. TRAINING (What you must learn)
+// Your Day 1 training modules:
+// Module A: Developer Thinking
+// Learn to think like this:
+// 1. What is the problem?
+// 2. What are the inputs?
+// 3. What are the outputs?
+// 4. What steps convert input → output?
+// 5. Can I break it into smaller parts?
+
+// Module B: JavaScript Foundations
+// Learn these today:
+// let, const
+// function()
+// if else
+// string methods
+// array methods
+// for loop, forEach
+// Module C: Git Basics
+// Commands to master:
+// git init
+// git status
+// git add .
+// git commit -m "message"
+// git branch feature/day1
+// git checkout feature/day1
+// git push origin feature/day1
+
+// 🥊 5. DRILL (Repeat until it becomes muscle memory)
+// Repeat these 3 tasks 5 times today:
+// 🔁 Drill 1 — Write a function to reverse a string
+// Do it without looking:
+// function reverseString(str) { ... }
+// 🔁 Drill 2 — Create a Git commit
+// Every time you write a function:
+// git add .
+// git commit -m "Completed drill"
+// 🔁 Drill 3 — DOM Practice
+// Create a textbox and a button.
+// On button click → alert the text value.
+// Do it 3–5 times until it becomes easy.
