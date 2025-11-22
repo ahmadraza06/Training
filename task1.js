@@ -42,24 +42,40 @@
 
 
 //--->>> Find max number in array
-function findMax(arr){
-    if(arr.length<=0){
-        return -1;
-    }
-    let n = arr.length;
-    let max = arr[0];
-    for(let i = 1;i<n;i++){
-        if(arr[i]>max){
-            max = arr[i];
-        }
-    }
-    return max;
+// function findMax(arr){
+//     if(arr.length<=0){
+//         return -1;
+//     }
+//     let n = arr.length;
+//     let max = arr[0];
+//     for(let i = 1;i<n;i++){
+//         if(arr[i]>max){
+//             max = arr[i];
+//         }
+//     }
+//     return max;
 
-}
-console.log(findMax([3,1,9,2]))
-console.log(findMax([-5,-1,-9]));
+// }
+// console.log(findMax([3,1,9,2]))
+// console.log(findMax([-5,-1,-9]));
 
 // Remove duplicates from array
+
+function removeDuplicates(arr){
+    duplicates={};
+    duparr = [];
+    for(let i = 0;i<arr.length;i++){
+        if(duplicates[arr[i]]!=1){
+            duparr.push(arr[i]);
+        }
+        duplicates[arr[i]]=1;
+    }
+    return duparr;
+}
+
+console.log(removeDuplicates([1,1,1,1,1]));
+
+
 
 // Task 3: Build a tiny functional project
 // 👉 “Text Tools App”
