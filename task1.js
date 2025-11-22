@@ -29,19 +29,36 @@
 // console.log(countVowels("Aoust"))
 
 // --->> Check palindrome
-function isPalindrome(s){
-    let n = s.length;
-    for(let i = 0;i<s.length/2;i++){
-        if(s[i]!=s[n-i-1]){
-            return false;
+// function isPalindrome(s){
+//     let n = s.length;
+//     for(let i = 0;i<s.length/2;i++){
+//         if(s[i]!=s[n-i-1]){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// console.log(isPalindrome("hello"));
+
+
+//--->>> Find max number in array
+function findMax(arr){
+    if(arr.length<=0){
+        return -1;
+    }
+    let n = arr.length;
+    let max = arr[0];
+    for(let i = 1;i<n;i++){
+        if(arr[i]>max){
+            max = arr[i];
         }
     }
-    return true;
+    return max;
+
 }
-console.log(isPalindrome("hello"));
+console.log(findMax([3,1,9,2]))
+console.log(findMax([-5,-1,-9]));
 
-
-// Find max number in array
 // Remove duplicates from array
 
 // Task 3: Build a tiny functional project
