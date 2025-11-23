@@ -36,46 +36,33 @@ const users = [
 
 // 1️⃣ Filter only adults (age ≥ 18) → return names
 function findAdults(user){
-    let arr = [];
-    user.filter((item) =>{
-        if(item.age>=18){
-            arr.push(item.name);
-        }
-    })
-    return arr;
+    return user.filter((item) => item.age>=18)
+    .map(item => item.name);
 }
-//console.log(findAdults(users));
+console.log(findAdults(users));
 // 2️⃣ Create array of scores
 function findAdultsScore(user){
-    let arr = [];
-    user.filter((item) =>{
-        if(item.age>=18){
-            arr.push(item.score);
-        }
-    })
-    return arr;
+    return user.filter((item) => item.age >=18)
+    .map((item)=>item.score);
 }
-//console.log(findAdultsScore(users));
+console.log(findAdultsScore(users));
 // 3️⃣ Find average score using reduce
 
 function findAverage(user){
     
-   return  user.reduce((a,b)=>a.score + b.score , 0);
+    const total = user.reduce((sum,i)=> sum+i.score,0)
+    return total/user.length;
     
 }
-//console.log(findAverage(users));
+console.log(findAverage(users));
 // 4️⃣ Create array: "Name - Score"
 function arrayName(user){
-    const arr = [];
-    user.map((item)=>{
-        arr.push(`${item.name} - ${item.score}`);
-    })
-    return arr;
+    return user.map((item)=> `${item.name} - ${item.score}`);
 }
-//console.log(arrayName(users));
+console.log(arrayName(users));
 // 5️⃣ Find highest scorer using reduce
 
 function highest(user){
-    return user.reduce((a,b)=> a>b?a:b,0)
+    return user.reduce((high,i) => i.score>high? i.score : high,0);
 }
-console.log(highest([1,2,3,4,1,122,90,1,2]));
+console.log(highest(users));
