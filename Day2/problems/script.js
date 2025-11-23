@@ -122,15 +122,30 @@ const users = [
 // Not allowed: loops, extra variables outside function.
 
 function ageCategory(user){
-    const obj = {adults:[],minors:[]};
-    user.map((item)=>{
-        if(item.age>=18){obj.adults.push(item.name)}
-        else{obj.minors.push(item.name)}
-    })
-    return obj;
+    return {
+        adults:user.filter((item)=> item.age>=18).map((item)=>item.name),
+        minors:user.filter((item)=>item.age<18).map((item)=>item.name)
+    }
 }
 console.log(ageCategory(users));
 
+// 🧩 Hard Problem 2 — Create score statistics
+// Return an object like this:
+
+// {
+//   max: 95,
+//   min: 75,
+//   avg: 86.6
+// }
+// Use only reduce (no Math.max, no loops).
+
+function stats(user){
+    return {max:user.reduce((high,i) => high > i.score ? high : i.score),
+        min:user.reduce((low,i) => low < i.score ? low : i.score),
+        avg:user.reduce((sum,i)=> sum + i.score,0)/user.length,
+    };
+}
+console.log(stats(users))
 
 
 
