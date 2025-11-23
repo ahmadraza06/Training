@@ -61,19 +61,19 @@
 
 // Remove duplicates from array
 
-function removeDuplicates(arr){
-    duplicates={};
-    duparr = [];
-    for(let i = 0;i<arr.length;i++){
-        if(duplicates[arr[i]]!=1){
-            duparr.push(arr[i]);
-        }
-        duplicates[arr[i]]=1;
-    }
-    return duparr;
-}
+// function removeDuplicates(arr){
+//     duplicates={};
+//     duparr = [];
+//     for(let i = 0;i<arr.length;i++){
+//         if(duplicates[arr[i]]!=1){
+//             duparr.push(arr[i]);
+//         }
+//         duplicates[arr[i]]=1;
+//     }
+//     return duparr;
+// }
 
-console.log(removeDuplicates([1,1,1,1,1]));
+// console.log(removeDuplicates([1,1,1,1,1]));
 
 
 
@@ -97,10 +97,21 @@ console.log(removeDuplicates([1,1,1,1,1]));
 // Example
 // Input: "I love coding coding in javascript javascript"
 // Output: "I love coding in javascript"
-// This trains:
-// problem-solving
-// string manipulation
-// algorithmic thinking
+
+function removeWords(sentence){
+    words = sentence.split(" ");
+    ans = {};
+    arr = [];
+    for(let i = 0;i<words.length;i++){
+        if( ans[words[i]]!=1){
+            ans[words[i]] = 1;
+            arr.push(words[i]);
+        }
+    }
+    sentence = arr.join(" ");
+    return sentence;
+}
+console.log(removeWords("Javascript is best because Javascript is powerful"  ));
 
 // 🎯 3. GOAL (End of Day 1 Target)
 // By end of today, you should be able to:
