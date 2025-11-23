@@ -70,7 +70,19 @@ const users = [
 // 🧩 Problem 1 — Count how many users are adults (age ≥ 18)
 // Return number, not names.
 
-function countAdults(user){
-    return user.filter((item) => item.age>=18).length
+// function countAdults(user){
+//     return user.filter((item) => item.age>=18).length
+// }
+// console.log(countAdults(users))
+
+// --->> 🧩 Problem 2 — Return array of users who passed (score ≥ 80)
+// --->> Return full user objects.
+
+function score80(user){
+    return user.filter((item) => item.score >= 80 )
 }
-console.log(countAdults(users))
+console.log(score80(users))
+
+
+
+
