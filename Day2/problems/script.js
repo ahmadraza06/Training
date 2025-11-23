@@ -55,7 +55,27 @@ function findAdultsScore(user){
     })
     return arr;
 }
-console.log(findAdultsScore(users));
+//console.log(findAdultsScore(users));
 // 3️⃣ Find average score using reduce
+
+function findAverage(user){
+    
+   return  user.reduce((a,b)=>a.score + b.score , 0);
+    
+}
+//console.log(findAverage(users));
 // 4️⃣ Create array: "Name - Score"
+function arrayName(user){
+    const arr = [];
+    user.map((item)=>{
+        arr.push(`${item.name} - ${item.score}`);
+    })
+    return arr;
+}
+//console.log(arrayName(users));
 // 5️⃣ Find highest scorer using reduce
+
+function highest(user){
+    return user.reduce((a,b)=> a>b?a:b,0)
+}
+console.log(highest([1,2,3,4,1,122,90,1,2]));
