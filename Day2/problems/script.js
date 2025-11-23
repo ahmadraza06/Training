@@ -36,7 +36,6 @@ const users = [
 
 // 1️⃣ Filter only adults (age ≥ 18) → return names
 function findAdults(user){
-
     let arr = [];
     user.filter((item) =>{
         if(item.age>=18){
@@ -44,10 +43,19 @@ function findAdults(user){
         }
     })
     return arr;
-
 }
-console.log(findAdults(users));
+//console.log(findAdults(users));
 // 2️⃣ Create array of scores
+function findAdultsScore(user){
+    let arr = [];
+    user.filter((item) =>{
+        if(item.age>=18){
+            arr.push(item.score);
+        }
+    })
+    return arr;
+}
+console.log(findAdultsScore(users));
 // 3️⃣ Find average score using reduce
 // 4️⃣ Create array: "Name - Score"
 // 5️⃣ Find highest scorer using reduce
