@@ -4,5 +4,12 @@
 
 //Remove duplicates from array WITHOUT using loops:
 function removeduplicates(arr){
-    arr.filter(a => indexOf(a)===)
+    //arr.filter(a => indexOf(a)=== )
 }
+
+// problem to uppercase arr 
+function toUpper(arr){
+    arr = arr.map((a)=>a.toUpperCase());
+    return arr;
+}
+console.log(toUpper(["ahmad","raza"]));
