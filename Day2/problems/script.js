@@ -34,35 +34,43 @@ const users = [
   { name: "Sara", age: 25, score: 95 }
 ];
 
-// 1️⃣ Filter only adults (age ≥ 18) → return names
-function findAdults(user){
-    return user.filter((item) => item.age>=18)
-    .map(item => item.name);
-}
-console.log(findAdults(users));
-// 2️⃣ Create array of scores
-function findAdultsScore(user){
-    return user.filter((item) => item.age >=18)
-    .map((item)=>item.score);
-}
-console.log(findAdultsScore(users));
-// 3️⃣ Find average score using reduce
+// // 1️⃣ Filter only adults (age ≥ 18) → return names
+// function findAdults(user){
+//     return user.filter((item) => item.age>=18)
+//     .map(item => item.name);
+// }
+// console.log(findAdults(users));
+// // 2️⃣ Create array of scores
+// function findAdultsScore(user){
+//     return user.filter((item) => item.age >=18)
+//     .map((item)=>item.score);
+// }
+// console.log(findAdultsScore(users));
+// // 3️⃣ Find average score using reduce
 
-function findAverage(user){
+// function findAverage(user){
     
-    const total = user.reduce((sum,i)=> sum+i.score,0)
-    return total/user.length;
+//     const total = user.reduce((sum,i)=> sum+i.score,0)
+//     return total/user.length;
     
-}
-console.log(findAverage(users));
-// 4️⃣ Create array: "Name - Score"
-function arrayName(user){
-    return user.map((item)=> `${item.name} - ${item.score}`);
-}
-console.log(arrayName(users));
-// 5️⃣ Find highest scorer using reduce
+// }
+// console.log(findAverage(users));
+// // 4️⃣ Create array: "Name - Score"
+// function arrayName(user){
+//     return user.map((item)=> `${item.name} - ${item.score}`);
+// }
+// console.log(arrayName(users));
+// // 5️⃣ Find highest scorer using reduce
 
-function highest(user){
-    return user.reduce((high,i) => i.score>high? i.score : high,0);
+// function highest(user){
+//     return user.reduce((high,i) => i.score>high? i.score : high,0);
+// }
+// console.log(highest(users));
+
+// 🧩 Problem 1 — Count how many users are adults (age ≥ 18)
+// Return number, not names.
+
+function countAdults(user){
+    return user.filter((item) => item.age>=18).length
 }
-console.log(highest(users));
+console.log(countAdults(users))
