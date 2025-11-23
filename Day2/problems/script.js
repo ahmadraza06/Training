@@ -105,11 +105,31 @@ const users = [
 // 🧩 Problem 5 — Find youngest user using reduce
 // Return the complete object, not only the age.
 
-function youngest(user){
-    return user.reduce((a,b) => a.age > b.age ?b:a )
-}
-console.log(youngest(users));
+// function youngest(user){
+//     return user.reduce((a,b) => a.age > b.age ?b:a )
+// }
+// console.log(youngest(users));
 
+// --->>> 🧩 Hard Problem 1 — Group users by age category
+// Given the same users array:
+
+// Return this output:
+// {
+//   adults: ["Ahmad", "John", "Sara"],
+//   minors: ["Raza", "Ali"]
+// }
+// Allowed: map, filter, reduce
+// Not allowed: loops, extra variables outside function.
+
+function ageCategory(user){
+    const obj = {adults:[],minors:[]};
+    user.map((item)=>{
+        if(item.age>=18){obj.adults.push(item.name)}
+        else{obj.minors.push(item.name)}
+    })
+    return obj;
+}
+console.log(ageCategory(users));
 
 
 
