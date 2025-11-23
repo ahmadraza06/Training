@@ -78,10 +78,29 @@ const users = [
 // --->> 🧩 Problem 2 — Return array of users who passed (score ≥ 80)
 // --->> Return full user objects.
 
-function score80(user){
-    return user.filter((item) => item.score >= 80 )
+// function score80(user){
+//     return user.filter((item) => item.score >= 80 )
+// }
+// console.log(score80(users))
+
+// 🧩 Problem 3 — Get total score of adults only (age ≥ 18)
+// Use filter → reduce.
+
+// function totalScore(user){
+//     return user.filter((item) => item.age>=18).reduce((sum,i)=> sum + i.score,0);
+// }
+
+// console.log(totalScore(users));
+
+// --->>> 🧩 Problem 4 — Create array of name initials
+// Example:
+// Ahmad → A
+// Raza → R
+
+function nameInitials(user){
+    return user.map((item) => item.name[0]);
 }
-console.log(score80(users))
+console.log(nameInitials(users));
 
 
 
