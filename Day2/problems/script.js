@@ -4,9 +4,9 @@
 
 //Remove duplicates from array WITHOUT using loops:
 // function removeduplicates(arr){
-//     //arr.filter(a => indexOf(a)=== )
+//     return arr.filter((item,i) => arr.indexOf(item)===i )
 // }
-
+// console.log(removeduplicates([1,2,3,3,1,2,3,2,1]));
 // problem 2 to uppercase arr 
 // function toUpper(arr){
 //     arr = arr.map((a)=>a.toUpperCase());
@@ -16,8 +16,38 @@
 
 // --->> problem 3 find sum of all even numbers in array
 
-function sumeven(arr){
-    return arr.filter(a=> a%2===0).reduce((a,b)=> a+b,0)
-}
+// function sumeven(arr){
+//     return arr.filter(a=> a%2===0).reduce((a,b)=> a+b,0)
+// }
 
-console.log(sumeven([10, 21, 33, 40, 55, 62]));
+// console.log(sumeven([10, 21, 33, 40, 55, 62]));
+
+// ---->>> section 3 drill 
+
+//Solve these 5 tasks using ONLY map, filter, reduce:
+
+const users = [
+  { name: "Ahmad", age: 22, score: 82 },
+  { name: "Raza", age: 17, score: 91 },
+  { name: "John", age: 28, score: 75 },
+  { name: "Ali", age: 16, score: 88 },
+  { name: "Sara", age: 25, score: 95 }
+];
+
+// 1️⃣ Filter only adults (age ≥ 18) → return names
+function findAdults(user){
+
+    let arr = [];
+    user.filter((item) =>{
+        if(item.age>=18){
+            arr.push(item.name);
+        }
+    })
+    return arr;
+
+}
+console.log(findAdults(users));
+// 2️⃣ Create array of scores
+// 3️⃣ Find average score using reduce
+// 4️⃣ Create array: "Name - Score"
+// 5️⃣ Find highest scorer using reduce
