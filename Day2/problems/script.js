@@ -97,10 +97,19 @@ const users = [
 // Ahmad → A
 // Raza → R
 
-function nameInitials(user){
-    return user.map((item) => item.name[0]);
+// function nameInitials(user){
+//     return user.map((item) => item.name[0]);
+// }
+// console.log(nameInitials(users));
+
+// 🧩 Problem 5 — Find youngest user using reduce
+// Return the complete object, not only the age.
+
+function youngest(user){
+    return user.reduce((a,b) => a.age > b.age ?b:a )
 }
-console.log(nameInitials(users));
+console.log(youngest(users));
+
 
 
 
