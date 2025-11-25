@@ -121,13 +121,13 @@ const users = [
 // Allowed: map, filter, reduce
 // Not allowed: loops, extra variables outside function.
 
-function ageCategory(user){
-    return {
-        adults:user.filter((item)=> item.age>=18).map((item)=>item.name),
-        minors:user.filter((item)=>item.age<18).map((item)=>item.name)
-    }
-}
-console.log(ageCategory(users));
+// function ageCategory(user){
+//     return {
+//         adults:user.filter((item)=> item.age>=18).map((item)=>item.name),
+//         minors:user.filter((item)=>item.age<18).map((item)=>item.name)
+//     }
+// }
+// console.log(ageCategory(users));
 
 // 🧩 Hard Problem 2 — Create score statistics
 // Return an object like this:
@@ -139,13 +139,139 @@ console.log(ageCategory(users));
 // }
 // Use only reduce (no Math.max, no loops).
 
-function stats(user){
-    return {max:user.reduce((high,i) => high > i.score ? high : i.score),
-        min:user.reduce((low,i) => low < i.score ? low : i.score),
-        avg:user.reduce((sum,i)=> sum + i.score,0)/user.length,
-    };
+// function stats(user){
+//     return {max:user.reduce((high,i) => high > i.score ? high : i.score),
+//         min:user.reduce((low,i) => low < i.score ? low : i.score),
+//         avg:user.reduce((sum,i)=> sum + i.score,0)/user.length,
+//     };
+// }
+// console.log(stats(users))
+
+
+// 🧩 Hard Problem 3 — Sort users by score (ONLY reduce!)
+// Return users sorted by score descending.
+
+function sortByScore(user){
+    return user.reduce((sorted,i)=>{
+      let index = sorted.findIndex((a)=> a.score < i.score);
+      if(index ===-1)return [...sorted,i];
+      else{
+        return [...sorted.slice(0,index),i,...sorted.slice(index)];
+      }
+    },[])
 }
-console.log(stats(users))
+//console.log(sortByScore(users))
+
+//🧩 Hard Problem 4 — Count how many users have each score digit
+// Example:
+// Scores = 82, 91, 75, 88, 95
+
+function countdigit(user){
+
+}
 
 
+// 🧩 Hard Problem 5 — Convert array to object keyed by username
+// Output:
+// {
+//  "Ahmad": { age: 22, score: 82 },
+//  "Raza": { age: 17, score: 91 },
+//  "John": { age: 28, score: 75 },
+//  "Ali": { age: 16, score: 88 },
+//  "Sara": { age: 25, score: 95 }
+// }
 
+
+// Only reduce.
+// function toObject(user){
+//     return user.reduce((obj,i)=>{
+//       obj[i.name] = {age:i.age,score:i.score};
+//       return obj;
+//     },{})
+// }
+// console.log(toObject(users))
+
+// create a promise
+
+let p  = new Promise((resolve,reject)=>{
+  let success = true;
+  if(success){resolve("Task Completed")}
+  else reject("something went wrong")
+})
+
+// p.then(res=> console.log(res))
+// .catch(err=>console.log(err))
+
+// async/await
+
+async function getData(){
+  let res = await fetch("https://dummyjson.com/products/search?q=phone")
+  let data = await res.json();
+  console.log(data);
+}
+//getData();
+
+// ✅ PART 5 — Challenge (Google Style)
+
+// Optimize array of 10,000 numbers using ONLY reduce (NO LOOPS).
+
+// Goal:
+// ✔ sum
+// ✔ largest
+// ✔ smallest
+// ✔ count even numbers
+// ✔ count odd numbers
+// ✔ calculate average
+// ✔ all in ONE reduce
+
+
+const arr = [1,2,3,4,5];
+const res = arr.reduce((acc,i)=>{
+  acc.sum += i;
+  if(i>acc.max){
+    acc.max = i;
+  }
+  if(i<acc.min){
+    acc.min = i;
+  }
+  if(i%2==0){
+    acc.even++;
+  }else{acc.odd++}
+
+  return acc;
+},{sum:0,max:-Infinity,min:Infinity,even:0,odd:0})
+
+console.log(res)
+
+// 💡 Mini Task (You MUST do this)
+// Task: Create a function that returns a Promise
+
+// It should:
+
+// ✔ wait 1 second
+// ✔ resolve with your name
+// ✔ print using .then()
+
+function wait1s(){
+
+  return new Promise(res=>{
+    setTimeout(()=>{
+      res("Ahmad")
+    },1000)
+  })
+}
+
+//wait1s().then(res=>console.log(res))
+
+async function getData(){
+
+  console.log("start");
+  let res = await wait1s();
+  console.log(res);
+  console.log("end");
+}
+
+// get data
+async function getAata(){
+  let data = await fetch("")
+}
