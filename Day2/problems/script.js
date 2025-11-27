@@ -241,7 +241,7 @@ const res = arr.reduce((acc,i)=>{
   return acc;
 },{sum:0,max:-Infinity,min:Infinity,even:0,odd:0})
 
-console.log(res)
+//console.log(res)
 
 // 💡 Mini Task (You MUST do this)
 // Task: Create a function that returns a Promise
@@ -272,6 +272,31 @@ async function getData(){
 }
 
 // get data
-async function getAata(){
-  let data = await fetch("")
+// async function getAata(){
+//   let data = await fetch("")
+// }
+
+function delay(ms) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(`Waited ${ms} ms`), ms);
+  });
 }
+// delay(1000).then(res=>console.log(res));
+
+// promise chain
+function promisa(ms){
+  return new Promise(res=>{
+    setTimeout(()=>{res(`resolve after ${ms} sec`)},ms)
+  })
+
+}
+
+//promisa(2000).then(res=>{console.log(res)});
+
+function loadUser(){
+  return new Promise((res)=>{
+    setTimeout(()=>res({id:1,name:"ahmad"}),1000)
+  })
+}
+
+loadUser().then(res=>{console.log(res)})

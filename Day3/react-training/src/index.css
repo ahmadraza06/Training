@@ -1,0 +1,19 @@
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    background: #a7a2a2;
+    border-radius: 20px;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+
+}
+
